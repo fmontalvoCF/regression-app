@@ -106,6 +106,7 @@ export class AppComponent {
         },
       ],
     };
+    this.updateMetrics();
   }
 
   updateMetrics() {
