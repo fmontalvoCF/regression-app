@@ -1,17 +1,20 @@
 <div class="container grid text-center">
   <div class="row align-items-start">
     <div class="col">
+      <!--Seleccion de la Pendiente -->
       <label for="customRange1" class="form-label">Valor de la pendiente m</label>
       <input [(ngModel)]="valorM" placeholder="X" (input)="updateChart()" type="range" class="form-range" min="-10.00"
         max="100.00" step="0.01" id="customRange1">
       <p>Valor de la pendiente m: {{valorM}}</p>
 
       <br><br>
+      <!--Seleccion de la interseccion -->
       <label for="customRange2" class="form-label">Valor de la interseccion b</label>
       <input [(ngModel)]="valorB" placeholder="Y" (input)="updateChart()" type="range" class="form-range" min="-10.00"
         max="100.00" step="0.01" id="customRange2">
       <p>Valor de la interseccion b: {{valorB}}</p>
 
+      <!--Seccion agregar puntos -->
       <label for="button-addon2" class="form-label">Agregar Puntos</label>
       <div class="input-group mb-3">
         <input [(ngModel)]="newX" type="number" min=0 class="form-control" aria-describedby="button-addon2">
@@ -19,7 +22,7 @@
         <button class="btn btn-outline-secondary" type="button" id="button-addon2"
           (click)="agregarPunto()">Agregar</button>
       </div>
-
+      <!--Tabla de puntos agregados -->
       <label for="button-addon2" class="form-label">Tabla de Puntos</label>
       <table class="table table-bordered">
         <thead>
@@ -36,6 +39,7 @@
         </tbody>
       </table>
     </div>
+    <!--Seccion de resultados -->
     <div class="col">
       <p-chart type="scatter" [data]="data" [options]="options"></p-chart>
       <br>

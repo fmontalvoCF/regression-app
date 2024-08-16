@@ -43,7 +43,9 @@ export class AppComponent {
   constructor() {
     this.initializeChart();
   }
-
+  /**
+   * Metodo iniciador del grafico.
+   */
   initializeChart() {
     this.data = {
       datasets: [
@@ -65,7 +67,9 @@ export class AppComponent {
       ],
     };
   }
-
+   /**
+    * Metodo para agregar puntos en la tabla.
+    */
   agregarPunto() {
     if (this.newX != null && this.newY != null) {
       this.points.push({ x: this.newX, y: this.newY });
@@ -74,7 +78,10 @@ export class AppComponent {
       console.log(this.points);
     }
   }
-
+  
+  /**
+   * Obtener datos de la linea.
+   */
   getLineData() {
     const minX = Math.min(...this.points.map((p) => p.x), 0);
     const maxX = Math.max(...this.points.map((p) => p.x), 10);
@@ -86,6 +93,9 @@ export class AppComponent {
     ];
   }
 
+  /**
+   * Metodo actulizar grafico.
+   */
   updateChart() {
     this.data = {
       datasets: [
@@ -108,7 +118,10 @@ export class AppComponent {
     };
     this.updateMetrics();
   }
-
+  
+  /**
+   * Metodo actualizacion de panel de resultados.
+   */
   updateMetrics() {
     const n = this.points.length;
     if (n === 0) return;
